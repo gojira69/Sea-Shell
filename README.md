@@ -1,4 +1,4 @@
-# C-SHELL
+# SEA-SHELL
 
 ## List of User Commands
 - `activities` : Displays processes spawned by the shell which are either `running` or `stopped`.
@@ -85,4 +85,4 @@ USAGE: warp <path>
 11. Redirection using user defined functions might not work/might print invalid characters.
 12. User is advised to give the path to the target directory while using `warp`.
 
-**On a side-note, `C-Shell` does not sell `seashells` on the seashore :(.**
+**On a side-note, `Sea-Shell` does not sell `seashells` on the seashore :(.**
