@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void add_process(int maxCommandLength, pid_t pid, char homeDirectory[maxCommandLength], char *miniCommand[maxCommandLength], int arguments, int bg)
 {

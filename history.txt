@@ -3,3 +3,5 @@ peek -la
 iMan ls
 clear
 proclore
+warp ..
+warp -

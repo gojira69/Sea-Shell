@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void saveHistoryToFile(const char history[][MAX_COMMAND_LENGTH], int count, char *location)
 {

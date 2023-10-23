@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 int fg = -1;
 int maxCommands = 30;
@@ -30,6 +30,8 @@ int main()
         printf("Error: GETCWD!\n");
         return 0;
     }
+
+    welcomeMessage();
 
     signal(SIGINT, kill_ctrl_c);
     signal(SIGTSTP, stop_proc);

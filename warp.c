@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void modchdir(int maxCommandLength, char *path, char home[maxCommandLength])
 {

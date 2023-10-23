@@ -7,5 +7,7 @@ void removeLastSlash(int maxCommandLength, char directory[maxCommandLength]);
 char *concatenateCommand(char *miniCommand[], int arguments);
 void freeCommands(char **commandsList, int maxCommands);
 void removeHTMLTags(char *text);
+void centerText(const char *text);
+void welcomeMessage();
 
 #endif

@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void cmd_parser(int maxCommandLength, int maxCommands, char *input, char **commandsList, int *numCommands, bool *bgArray)
 {

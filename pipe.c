@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void pipeInput(int maxCommandLength, char *command, char *input, char homeDirectory[maxCommandLength], char prevDirectory[maxCommandLength], char currDirectory[maxCommandLength], bool *bg, int *fg)
 {

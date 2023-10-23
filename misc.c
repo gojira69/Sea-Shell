@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "headers/headers.h"
 
 void findAndReplace(char *str, char *find, char *replace)
 {
@@ -94,4 +94,55 @@ void removeHTMLTags(char *text)
     }
 
     *destination = '\0';
+}
+
+void centerText(const char *text)
+{
+    const char *tput_command = "tput cols";
+    FILE *pipe = popen(tput_command, "r");
+    if (pipe == NULL)
+    {
+        perror("popen");
+        exit(1);
+    }
+
+    int termWidth;
+    if (fscanf(pipe, "%d", &termWidth) != 1)
+    {
+        perror("fscanf");
+        exit(1);
+    }
+    pclose(pipe);
+
+    int textWidth = strlen(text);
+    if (termWidth >= textWidth)
+    {
+        int leftPadding = (termWidth - textWidth) / 2;
+        printf("\e[%dG%s\n", leftPadding + 1, text);
+    }
+    else
+    {
+        printf("%s\n", text);
+    }
+}
+
+void welcomeMessage()
+{
+    system("clear");
+    centerText("WELCOME TO SEA-SHELL!!");
+    printf("LIST OF USER COMMANDS\n");
+    printf("- `activities` : Displays processes spawned by the shell which are either `running` or `stopped`.\n");
+    printf("- `bg` : Continues the `stopped` process in the `background`.\n");
+    printf("- `fg` : Continues the `stopped` process in the `foreground`.\n");
+    printf("- `iMan` : Displays the `man` page of the command.\n");
+    printf("- `neonate` : Prints the `PID` of the recently created system process every `n` seconds and stops printing when the user presses the `x` key.\n");
+    printf("- `pastevents` : Prints the last 15 `unique` commands executed in the shell.\n");
+    printf("- `pastevents execute <index>` : Executes the nth command in the list of pastevents\n");
+    printf("- `pastevents purge` : Clears the pastevents\n");
+    printf("- `peek` : Prints all the files and directories in the specified directories in lexicographic order. \n");
+    printf("- `ping` : It is used to send signals to processes.\n");
+    printf("- `proclore` : It is used to obtain information regarding a process. If no `PID` is given, then it prints the information of the shell.\n");
+    printf("- `seek` : It returns a list of relative paths (from the target directory) of all matching files/directories. \n");
+    printf("- `warp` : It changes the directory that the shell is currently in.\n");
+    printf("- `I/O redirection` : I/O redirection can also be done using `> , < , >>` and `|`.\n");
 }
